@@ -3,8 +3,8 @@ from flask import Flask
 from data.taskDataService import TaskDataService
 from uuid import uuid4
 
-application = Flask(__name__)
-application.secret_key = str(uuid4())
+app = Flask(__name__)
+app.secret_key = str(uuid4())
 
 
 @app.route('/new_task')

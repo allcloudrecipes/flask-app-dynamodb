@@ -29,7 +29,7 @@ def add_task():
 def tasks():
     task_data = TaskDataService()
     tasks = task_data.list()
-    return render_template('tasks.html', tasks)
+    return render_template('tasks.html', tasks=tasks)
 
 
 @app.route('/delete/<string:id>')

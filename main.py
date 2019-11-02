@@ -42,4 +42,4 @@ def delete_task(id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=os.environ['APP_PORT'])
+    app.run(host='0.0.0.0', port=os.environ.get['APP_PORT'])

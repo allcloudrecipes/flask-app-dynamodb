@@ -17,7 +17,7 @@ def add_task():
     _name = request.form['inputName']
     _id = str(uuid4())
     if _name and request.method == 'POST':
-        task_data = TaskDataService
+        task_data = TaskDataService()
         task_data.create(_id, _name)
         flash('Task added successfully!')
         return redirect('/')
@@ -27,14 +27,14 @@ def add_task():
 
 @app.route('/')
 def tasks():
-    task_data = TaskDataService
+    task_data = TaskDataService()
     tasks = task_data.list()
     return render_template('tasks.html', tasks)
 
 
 @app.route('/delete/<string:id>')
 def delete_task(id):
-    task_data = TaskDataService
+    task_data = TaskDataService()
     task_data.delete(id)
     flash('Task deleted successfully!')
     return redirect('/')

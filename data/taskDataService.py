@@ -5,7 +5,7 @@ import boto3
 
 class TaskDataService:
     def __init__(self):
-        self.dynamodb = boto3.client('dynamodb', region_name='us-east-2')
+        self.dynamodb = boto3.resource('dynamodb', region_name='us-east-2')
         self.table = self.dynamodb.Table('TASKS')
 
     def create(self, task_id, task_name):
